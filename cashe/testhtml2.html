@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загадка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="teststyles.css">
+</head>
+<body>
+    <div id="kinoplank-container">
+      <video id="kinoplank" autoplay loop muted>
+          <source src="footage.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+
+
+
+    <h1>Загадка</h1>
+    <p>Вопрос: Как зовут моего друга?</p>
+    <form id="riddleForm">
+        <input type="text" id="answerInput" placeholder="Введите ответ">
+        <button type="button" onclick="checkAnswer()">Проверить</button>
+    </form>
+    <p id="resultText"></p>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answerInput').value.toLowerCase();
+            var correctAnswer = 'слава';
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('resultText').innerHTML = 'Правильно!';
+            } else {
+                document.getElementById('resultText').innerHTML = '* Неправильно *';
+            }
+        }
+    </script>
+</body>
+</html>
